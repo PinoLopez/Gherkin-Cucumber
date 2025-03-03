@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": 
   {
-    "test": "cucumber-js --require step_definitions/01wikipedia.step_definitions.js --require step_definitions/02wikipedia.step_definitions.js --require step_definitions/03wikipedia.step_definitions.js --require step_definitions/04wikipedia.step_definitions.js --require step_definitions/05wikipedia.step_definitions.js"
+    "test": "cucumber-js --require step_definitions/01wikipedia.step_definitions.js --require step_definitions/02wikipedia.step_definitions.js --require step_definitions/03wikipedia.step_definitions.js --require step_definitions/04wikipedia.step_definitions.js --require step_definitions/05wikipedia.step_definitions.js --require step_definitions/06wikipedia.step_definitions.js"
   },
   "keywords": [],
   "author": "Juan Pino Lopez",
