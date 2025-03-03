@@ -1,0 +1,18 @@
+{
+  "name": "gherkin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": 
+  {
+    "test": "cucumber-js --require step_definitions/01wikipedia.step_definitions.js --require step_definitions/02wikipedia.step_definitions.js --require step_definitions/03wikipedia.step_definitions.js"
+  },
+  "keywords": [],
+  "author": "Juan Pino Lopez",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": 
+  {
+    "@cucumber/cucumber": "^11.2.0",
+    "playwright": "^1.50.1"
+  }
+}
