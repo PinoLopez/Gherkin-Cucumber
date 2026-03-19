@@ -1,17 +1,15 @@
 {
-  "name": "gherkin",
+  "name": "gherkin-cucumber",
   "version": "1.0.0",
+  "description": "Tests automatizados de navegador usando Cucumber.js, Gherkin y Playwright. Wikipedia como sitio de prueba.",
   "main": "index.js",
-  "scripts": 
-  {
-    "test": "cucumber-js --require step_definitions/01wikipedia.step_definitions.js --require step_definitions/02wikipedia.step_definitions.js --require step_definitions/03wikipedia.step_definitions.js --require step_definitions/04wikipedia.step_definitions.js --require step_definitions/05wikipedia.step_definitions.js --require step_definitions/06wikipedia.step_definitions.js"
+  "scripts": {
+    "test": "cucumber-js"
   },
-  "keywords": [],
+  "keywords": ["cucumber", "gherkin", "playwright", "bdd", "testing", "automatizacion"],
   "author": "Juan Pino Lopez",
   "license": "ISC",
-  "description": "",
-  "devDependencies": 
-  {
+  "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
     "playwright": "^1.50.1"
   }
