@@ -4,7 +4,7 @@ const { highlightElements } = require('../support/highlight');
 
 Given('el usuario está en la página de Ibanez', async () => {
   await getPage().goto('https://es.wikipedia.org/wiki/Ibanez');
-  await getPage().waitForLoadState('networkidle');
+  await getPage().waitForLoadState('networkidle', { timeout: 30000 });
 });
 
 Then('el usuario destaca los elementos "guitarras" y "bajos"', async () => {

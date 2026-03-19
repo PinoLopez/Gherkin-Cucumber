@@ -4,7 +4,7 @@ const { highlightElements } = require('../support/highlight');
 
 Given('el usuario está en la página de Anekdoten en Wikipedia', async () => {
   await getPage().goto('https://es.wikipedia.org/wiki/Anekdoten');
-  await getPage().waitForLoadState('networkidle');
+  await getPage().waitForLoadState('networkidle', { timeout: 30000 });
 });
 
 Then('el usuario destaca los elementos "Rock progresivo", "Suecia"', async () => {

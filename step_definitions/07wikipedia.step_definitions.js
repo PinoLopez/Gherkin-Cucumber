@@ -5,7 +5,7 @@ const { highlightElements } = require('../support/highlight');
 
 Given('el usuario está en la página del Sintetizador Moog', async () => {
   await getPage().goto('https://es.wikipedia.org/wiki/Sintetizador_Moog');
-  await getPage().waitForLoadState('networkidle');
+  await getPage().waitForLoadState('networkidle', { timeout: 30000 });
 });
 
 Then('el usuario destaca los elementos "Minimoog" y "Robert Moog"', async () => {

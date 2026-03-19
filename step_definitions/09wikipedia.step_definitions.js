@@ -5,7 +5,7 @@ const { highlightElements } = require('../support/highlight');
 
 Given('el usuario está en la página del Yamaha DX7', async () => {
   await getPage().goto('https://es.wikipedia.org/wiki/Yamaha_DX7');
-  await getPage().waitForLoadState('networkidle');
+  await getPage().waitForLoadState('networkidle', { timeout: 30000 });
 });
 
 Then('el usuario destaca los elementos "Yamaha" y "DX7"', async () => {

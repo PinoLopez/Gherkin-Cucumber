@@ -5,7 +5,7 @@ const { highlightElements } = require('../support/highlight');
 
 Given('el usuario está en la página de la Fender Stratocaster', async () => {
   await getPage().goto('https://es.wikipedia.org/wiki/Fender_Stratocaster');
-  await getPage().waitForLoadState('networkidle');
+  await getPage().waitForLoadState('networkidle', { timeout: 30000 });
 });
 
 Then('el usuario destaca los elementos "Fender" y "Leo Fender"', async () => {
