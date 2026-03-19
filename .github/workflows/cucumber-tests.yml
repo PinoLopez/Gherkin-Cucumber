@@ -1,0 +1,60 @@
+name: Tests de Cucumber y Publicación de Informe
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Instalar dependencias
+      run: npm ci
+
+    - name: Instalar navegador Chromium
+      run: npx playwright install chromium --with-deps
+
+    - name: Ejecutar tests
+      run: npm test
+      env:
+        CI: true
+
+    - name: Subir informe HTML como artefacto
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: cucumber-report
+        path: cucumber-report/
+
+  deploy-report:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Descargar informe HTML
+      uses: actions/download-artifact@v4
+      with:
+        name: cucumber-report
+        path: cucumber-report/
+
+    - name: Publicar informe en GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: cucumber-report
+        destination_dir: report
+        keep_files: true
